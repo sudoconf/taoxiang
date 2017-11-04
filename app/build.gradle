@@ -8,8 +8,8 @@ android {
         applicationId "cn.hwwwwh.taoxiang"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -58,7 +58,7 @@ dependencies {
     //applink
     compile 'com.alibaba.sdk.android:alibc_link_partner:1.1.0.0'
     //UT
-    compile 'com.taobao.android:utdid4all:1.1.5.3_proguard@jar'
+    //compile 'com.taobao.android:utdid4all:1.1.5.3_proguard@jar'
     compile 'com.alibaba.mtl:app-monitor-sdk:2.5.1.3_for_bc_proguard@jar'
     //联盟SDK
     compile 'com.alimama.tunion.sdk:tuniontradesdk:0.3.2'
@@ -114,7 +114,9 @@ dependencies {
     //阿里云feedback
     compile 'com.aliyun.ams:alicloud-android-feedback:3.1.0@aar'
     compile 'com.aliyun.ams:alicloud-android-utdid:1.1.5.3'
+    //compile 'com.aliyun.ams:alicloud-android-ut:5.1.0'
     compile 'com.aliyun.ams:alicloud-android-utils:1.0.3'
     //
     compile 'com.qiangxi.checkupdatelibrary:checkupdatelibrary:1.1.3@aar'
+
 }
