@@ -8,8 +8,8 @@ android {
         applicationId "cn.hwwwwh.taoxiang"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -32,6 +32,12 @@ android {
             keyAlias 'taoxiang'
             keyPassword 'abc13376547162'
         }
+    }
+}
+
+repositories{
+    flatDir{
+        dirs 'libs'
     }
 }
 
@@ -118,5 +124,13 @@ dependencies {
     compile 'com.aliyun.ams:alicloud-android-utils:1.0.3'
     //
     compile 'com.qiangxi.checkupdatelibrary:checkupdatelibrary:1.1.3@aar'
+    //用户注册
+    compile files('libs/Jimu-2017.0802.1742.jar')
+    compile files('libs/MobCommons-2017.0802.1742.jar')
+    compile files('libs/MobTools-2017.0802.1742.jar')
+    compile files('libs/SMSSDK-3.0.0.jar')
+    compile files('libs/UMSSDK-1.0.0.jar')
+    //底部弹出框
+    compile 'com.flipboard:bottomsheet-core:1.5.3'
 
 }
