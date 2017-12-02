@@ -8,17 +8,10 @@ android {
         applicationId "cn.hwwwwh.taoxiang"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.4"
+        versionCode 7
+        versionName "1.5.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
     signingConfigs {
         debug {
             storeFile file("./taoxiang.jks")
@@ -33,6 +26,22 @@ android {
             keyPassword 'abc13376547162'
         }
     }
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        baidu {
+        }
+
+        other {
+        }
+    }
+
 }
 
 repositories{
@@ -52,7 +61,7 @@ dependencies {
     //fastjson
     compile 'com.alibaba:fastjson:1.2.9'
     //支付
-    compile 'com.alibaba.alipay:alipaySingle:20160825@jar'
+    otherCompile 'com.alibaba.alipay:alipaySingle:20160825@jar'
     //登陆
     compile 'com.ali.auth.sdk:alibabauth_core:1.4.3@jar'
     compile 'com.ali.auth.sdk:alibabauth_ui:1.4.3@aar'
@@ -132,5 +141,24 @@ dependencies {
     compile files('libs/UMSSDK-1.0.0.jar')
     //底部弹出框
     compile 'com.flipboard:bottomsheet-core:1.5.3'
+    //滑动返回
+    compile 'cn.bingoogolapple:bga-swipebacklayout:1.1.6@aar'
 
 }
+
+//android {
+//    defaultConfig {
+//        ndk {
+//            //设置支持的SO库架构
+//            abiFilters 'armeabi'// , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+//    }
+//}
+dependencies {
+    compile "com.android.support:multidex:1.0.1" // 多dex配置
+    //注释掉原有bugly的仓库
+    //compile 'com.tencent.bugly:crashreport:latest.release'//其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.3.2
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release' //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
+}
+apply from: 'tinker-support.gradle'
