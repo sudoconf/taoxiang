@@ -17,15 +17,15 @@ android {
     signingConfigs {
         debug {
             storeFile file("./taoxiang.jks")
-            storePassword 'abc13376547162'
+            storePassword '****'
             keyAlias 'taoxiang'
-            keyPassword 'abc13376547162'
+            keyPassword '****'
         }
         release {
             storeFile file("./taoxiang.jks")
-            storePassword 'abc13376547162'
+            storePassword '****'
             keyAlias 'taoxiang'
-            keyPassword 'abc13376547162'
+            keyPassword '****'
         }
     }
     buildTypes {
